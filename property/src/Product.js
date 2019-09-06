@@ -9,9 +9,12 @@ export class Product extends Component {
     this.state = {
       Products:props.Productvalue
   };
+  this.clickevent = this.clickevent.bind(this);
 
 }
-
+clickevent(){
+  alert(JSON.stringify(this.props.Productvalue));
+}
 
 
     render(){
@@ -35,6 +38,7 @@ console.log(Productvalue);
       price :
       <input type="text" name="name" value={Productvalue.ProductPrice} onChange={this.props.propPrice} />
     </label><br/>
+    <input  type="submit" value="click"  onClick={this.clickevent}/>
   </form>
         );
     }
